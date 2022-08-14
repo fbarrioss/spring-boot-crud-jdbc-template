@@ -4,6 +4,7 @@
                   xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.3/weblogic-web-app.xsd">
 
     <container-descriptor>
+
         <prefer-application-packages>
             <package-name>org.slf4j</package-name>
             <package-name>javax.validation.*</package-name>
@@ -12,5 +13,5 @@
             <package-name>org.springframework.*</package-name>
         </prefer-application-packages>
     </container-descriptor>
-    <context-root>/demo</context-root>
+    <context-root>/demojdbc</context-root>
 </weblogic-web-app>
