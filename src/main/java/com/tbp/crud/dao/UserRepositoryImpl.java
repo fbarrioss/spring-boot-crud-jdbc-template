@@ -1,12 +1,13 @@
 package com.tbp.crud.dao;
 
-import com.tbp.crud.entity.User;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import com.tbp.crud.entity.User;
+import lombok.extern.slf4j.Slf4j;
 
-import java.util.List;
-
+@Slf4j
 @Repository
 public class UserRepositoryImpl implements UserRepository {
 
@@ -20,26 +21,29 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User saveUser(User user) {
+        log.debug("Guardando usuario {}", user);
         jdbcTemplate.update(INSERT_USER_QUERY, user.getId(), user.getFname(), user.getLname(), user.getEmail());
         return user;
     }
 
     @Override
     public User updateUser(User user) {
+        log.debug("Actualizando usuario {}", user);
         jdbcTemplate.update(UPDATE_USER_BY_ID_QUERY, user.getFname(), user.getId());
         return user;
     }
 
     @Override
     public User getById(int id) {
+        log.debug("Leyendo datos para el usuario {}", id);
         return jdbcTemplate.queryForObject(GET_USER_BY_ID_QUERY, (rs, rowNum) -> {
-
             return new User(rs.getInt("id"), rs.getString("fname"), rs.getString("lname"), rs.getString("email"));
         },id);
     }
 
     @Override
     public String deleteById(int id) {
+        log.debug("Eliminando usuario {}", id);
         jdbcTemplate.update(DELETE_USER_BY_ID, id);
         return "Usuario eliminado con ID: " + id;
     }
