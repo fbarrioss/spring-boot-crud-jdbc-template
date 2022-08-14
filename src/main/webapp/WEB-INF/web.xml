@@ -3,7 +3,7 @@
 <web-app>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.tmp.crud.SpringBootCrudJdbcTemplateApplication</param-value>
+        <param-value>com.tbp.crud.SpringBootCrudJdbcTemplateApplication</param-value>
     </context-param>
 
     <listener>
