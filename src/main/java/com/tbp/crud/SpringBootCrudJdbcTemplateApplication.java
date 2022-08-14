@@ -15,6 +15,7 @@ public class SpringBootCrudJdbcTemplateApplication extends SpringBootServletInit
     }
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCrudJdbcTemplateApplication.class, args);
+		
 	}
 
 }
