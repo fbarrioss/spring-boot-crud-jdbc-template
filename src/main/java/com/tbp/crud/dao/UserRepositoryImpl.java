@@ -41,7 +41,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public String deleteById(int id) {
         jdbcTemplate.update(DELETE_USER_BY_ID, id);
-        return "User got deleted with id " + id;
+        return "Usuario eliminado con ID: " + id;
     }
 
     @Override
