@@ -16,6 +16,7 @@ public class UserRepositoryImpl implements UserRepository {
     private static final String GET_USER_BY_ID_QUERY = "SELECT * FROM USER WHERE ID=?";
     private static final String DELETE_USER_BY_ID = "DELETE FROM USER WHERE ID=?";
     private static final String GET_USERS_QUERY = "SELECT * FROM USER";
+    
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
